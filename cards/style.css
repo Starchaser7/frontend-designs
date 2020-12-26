@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    min-width: 100vh;
+    min-width: 80vh;
     background: #232427;
 }
 .container {
@@ -36,6 +36,17 @@ body {
     margin: 30px;
 }
 
+.container .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255,0.1);
+    border-radius: 15px 0px 0px 15px;
+}
+
 .container .card .box {
     position: absolute;
     top: 20px;
@@ -49,6 +60,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+.container .card .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255,0.05);
+    pointer-events: none;
 }
 
 .container .card .box:hover {
@@ -82,4 +105,28 @@ body {
     color: rgba(255, 255, 255,0.5);
     z-index: 1;
     transition: 0.5s;
+}
+
+.link {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    background: #000000;
+    margin-top: 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.card:nth-child(1) .link {
+    background: lightblue;
+}
+
+.card:nth-child(2) .link {
+    background: green;
+}
+
+.card:nth-child(3) .link {
+    background: purple;
 }
