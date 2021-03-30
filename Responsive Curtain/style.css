@@ -107,7 +107,7 @@ body {
 }
 
 .navigation ul li a:hover {
-    background: #fff;
+    background: rgb(0, 0, 0);
     color: red;
 }
 
