@@ -13,12 +13,10 @@ body {
     background: #111;
 }
 
-.testText {
-    color: rgba(255, 255, 255, 0.1);
-    font-size: 8vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+html {
+    background: url(background.png) no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100%;
 }
 
 .toggle {
@@ -63,7 +61,6 @@ body {
     left: calc(25% * var(--i));
     width: 25%;
     height: 100%;
-    background: red;
     transition: 0.25s;
     border: 1px solid rgba(0, 0, 0, 0.25);
     transition-delay: calc(0.25s * var(--i));
@@ -107,8 +104,7 @@ body {
 }
 
 .navigation ul li a:hover {
-    background: rgb(0, 0, 0);
-    color: red;
+    background: rgba(0, 0, 0, 0.6);
 }
 
 @media (max-width: 767px) {
