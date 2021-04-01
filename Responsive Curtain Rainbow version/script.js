@@ -4,29 +4,29 @@ document.querySelector('.toggle').onclick = function () {
     navigation.classList.toggle('active');
 }
 
+//pegar cores do arco iris
+const cores = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#00FFFF', '#0000FF', '#8B00FF'];
+
+function pegarCor () {
+    return cores[Math.floor(Math.random() * cores.length)]
+}
 
 //abaixo só muda as cores aleatorias
-function changeColor() {
-    const hex = (Math.random()*0xFFFFFF<<0).toString(16);
-    return `#${hex}`;
-}
 
 const spanSelector = document.querySelectorAll('span');
 document.getElementById('change').addEventListener('click', () =>{
-    const cor = changeColor();
     for (let i = 0; i < spanSelector.length; i++){
-        spanSelector[i].style.background = `${cor}50`
+        spanSelector[i].style.background = `${cores[i]}50`
     }
 })
 
 const aSelector = document.querySelectorAll('a');
 
-aSelector.forEach(element => {
-    element.onmouseover = function() {
-        const cor = changeColor();
-        element.style.color = cor;
+aSelector.forEach((element, index) => {
+    element.onmouseover = () => {
+        element.style.color = cores[index];
     }
-    element.onmouseout = function() {
+    element.onmouseout = () => {
         element.style.color = 'white';
     }
 })
